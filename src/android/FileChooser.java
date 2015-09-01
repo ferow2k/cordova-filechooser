@@ -1,4 +1,4 @@
-package com.megster.cordova;
+package net.devonix.cordova;
 
 import android.app.Activity;
 import android.content.Intent;
