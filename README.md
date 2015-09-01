@@ -4,16 +4,16 @@ Requires Cordova >= 2.8.0
 
 Install with Cordova CLI
 	
-	$ cordova plugin add http://github.com/don/cordova-filechooser.git
+	$ cordova plugin add http://github.com/ferow2k/cordova-filechooser.git
 
 Install with Plugman 
 
 	$ plugman --platform android --project /path/to/project \ 
-		--plugin http://github.com/don/cordova-filechooser.git
+		--plugin http://github.com/ferow2k/cordova-filechooser.git
 
 API
 
-	fileChooser.open(successCallback, failureCallback);
+	fileChooser.open(successCallback, failureCallback, type, title);
 
 The success callback get the uri of the selected file
 
