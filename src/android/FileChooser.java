@@ -22,23 +22,23 @@ public class FileChooser extends CordovaPlugin {
     public boolean execute(String action, CordovaArgs args, CallbackContext callbackContext) throws JSONException {
 
         if (action.equals(ACTION_OPEN)) {
-            chooseFile(callbackContext);
+            chooseFile(callbackContext, args.getString(0), args.getString(0));
             return true;
         }
 
         return false;
     }
 
-    public void chooseFile(CallbackContext callbackContext) {
+    public void chooseFile(CallbackContext callbackContext, String type, String title) {
 
         // type and title should be configurable
 
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        intent.setType("*/*");
+        intent.setType(type);
         intent.addCategory(Intent.CATEGORY_OPENABLE);
         intent.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
 
-        Intent chooser = Intent.createChooser(intent, "Select File");
+        Intent chooser = Intent.createChooser(intent, title);
         cordova.startActivityForResult(this, chooser, PICK_FILE_REQUEST);
 
         PluginResult pluginResult = new PluginResult(PluginResult.Status.NO_RESULT);
