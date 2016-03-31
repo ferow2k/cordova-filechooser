@@ -30,7 +30,7 @@ public class FileChooser extends CordovaPlugin {
     public boolean execute(String action, CordovaArgs args, CallbackContext callbackContext) throws JSONException {
 
         if (action.equals(ACTION_OPEN)) {
-            chooseFile(callbackContext, args.getString(0), args.getString(0));
+            chooseFile(callbackContext, args.getString(0), args.getString(1));
             return true;
         }
 
